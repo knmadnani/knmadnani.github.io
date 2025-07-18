@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Khushraj</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #header {
+      height: 150px;
+      background: black;
+      color: #0f0;
+      position: relative;
+    }
+
+   #main {
+      display: flex;
+      height: calc(100vh - 150px);
+    }
+
+    #sidebar {
+      width: 200px;
+      background: #111;
+      padding: 20px;
+      box-sizing: border-box;
+      color: white;
+    }
+
+    #sidebar a {
+      display: block;
+      margin-bottom: 12px;
+      color: #0f0;
+      text-decoration: none;
+      font-family: monospace;
+font-size: 19px;
+
+    }
+
+    #sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    #mainframe {
+      flex-grow: 1;
+      border: none;
+      height: 100%;
+      width: 100%;
+    }
+
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      font-family: monospace;
+      font-size: 42px;
+      text-align: center;
+      color: white;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <canvas id="matrixCanvas"></canvas>
+    <div class="logo" size="large">Khushraj Madnani</div>
+  </div>
+
+<div id="main">
+    <div id="sidebar">
+      <a href="about.html" target="mainframe">About Me</a>
+      <a href="research1.html" target="mainframe">Research</a>
+      <a href="education.html" target="mainframe">Education & Experience</a>
+      <a href="teaching.html" target="mainframe">Teaching</a>
+      <a href="publications.html" target="mainframe">Publications</a>
+    </div>
+    <iframe id="mainframe" name="mainframe" src="about.html"></iframe>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = 150;
+
+    const binaryRam = 'Ram'.split('')
+      .map(c => c.charCodeAt(0).toString(2).padStart(8, '0'))
+      .join('');
+    const chars = binaryRam.repeat(100).split('');
+    const fontSize = 14;
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = Array(columns).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#0f0';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 33);
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+    });
+  </script>
+</body>
+</html>
