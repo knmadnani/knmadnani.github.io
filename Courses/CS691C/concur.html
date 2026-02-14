@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Concurrency Theory – Course Page</title>
+
+  <style>
+    :root {
+      --primary: #1f3a5f;
+      --secondary: #4a7c59;
+      --light: #f5f7fa;
+      --text: #2c2c2c;
+      --accent: #d9e4ec;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), #14253d);
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      margin-top: 0.8rem;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      background: white;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    section h2 {
+      margin-top: 0;
+      color: var(--primary);
+      border-left: 5px solid var(--secondary);
+      padding-left: 0.7rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .info-box {
+      background: var(--accent);
+      padding: 1.2rem;
+      border-radius: 8px;
+    }
+
+    .info-box strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #e9eef3;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    footer span {
+      color: var(--primary);
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Concurrency Theory</h1>
+  <p>Formal Models of Concurrency</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>Course Overview</h2>
+    <p>
+      This course introduces the theoretical foundations of concurrency.
+      We study mathematical models for concurrent and distributed systems,
+      including process calculi, transition systems, and petri-nets.
+      Emphasis is placed on formal reasoning of these models.
+    </p>
+  </section>
+
+  <section>
+    <h2>Learning Objectives</h2>
+    <ul>
+      <li>Understand formal models of concurrency and interaction</li>
+      <li>Reason about equivalence, refinement, and behavioral semantics</li>
+      <li>Analyze expressiveness, decidability and complexity boundaries</li>
+      <li>Gain exposure to verification and model-checking techniques</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Course Information</h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <strong>Level</strong>
+        Graduate / Advanced Undergraduate
+      </div>
+      <div class="info-box">
+        <strong>Prerequisites</strong>
+        Automata Theory, Logic, Discrete Mathematics
+      </div>
+      <div class="info-box">
+        <strong>Credits</strong>
+        6 Credits
+      </div>
+      <div class="info-box">
+        <strong>Evaluation</strong>
+        Assignments/Quizzes, Projects, Exam
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Topics Covered</h2>
+    <ul>
+      <li>Introduction to Concurrency</li>
+      <li>Process Calculi (CCS) Syntax and Operational Semantivs</li>
+      <li>Bisimulation, Weak Bisimulation, Simulation Equivalence and Trace Equivalences</li>
+      <li> Revisiting Computability </li>
+      <li>Process Calculi with mobility (π-calculus)</li>
+      <li>Process Calculi (CSP)</li>
+      <li>Introduction to Trace Theory: Mazurkiewicz Traces and Related Theorems</li>
+      <li>Well-Structured Transition Systems</li>
+      <li>Petrinets/Vector Addition Systems with States</li>
+      <li>Expressiveness and Decidability Results</li>
+      <li>Temporal Logic, Model Checking and Verification Techniques</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Assessment Structure (before the potluck grading)</h2>
+    <ul>
+      <li><strong>Problem Sets:</strong> 15%</li>
+      <li><strong>Mini Project / Reading Project:</strong> 15%</li>
+      <li><strong>Mid-Semester Exam:</strong> 20%</li>
+      <li><strong>End-Semester Exam:</strong> 45%</li>
+	<li><strong> Class Paticipation:</strong>5%</li>
+
+    </ul>
+  </section>
+
+<section>
+  <h2>References</h2>
+
+  <ul>
+    <li>
+      Robin Milner, <em>Communication and Concurrency</em><br>
+      <small>Foundational text for CCS and behavioral equivalences.</small>
+    </li>
+
+    <li>
+      C. A. R. Hoare, <em>Communicating Sequential Processes</em><br>
+      <small>Original monograph introducing CSP.</small>
+    </li>
+
+    <li>
+      A. W. Roscoe, <em>The Theory and Practice of Concurrency</em><br>
+      <small>Definitive modern reference for CSP, refinement, failures and divergences.</small>
+    </li>
+
+    <li>
+      Davide Sangiorgi and David Walker, <em>The π-Calculus: A Theory of Mobile Processes</em><br>
+      <small>Standard reference for the π-calculus, expressiveness, and encodings.</small>
+    </li>
+
+    <li>
+      Volker Diekert and Grzegorz Rozenberg (eds.), <em>The Book of Traces</em><br>
+      <small>Authoritative reference on trace theory and partial-order semantics.</small>
+    </li>
+
+    <li>
+      Selected research papers on <em>Petri Nets</em><br>
+      <small>
+        Coverability, Reachability, Non-Elementary Behaviour of Petrinets, Reversal Bounded Counter Machines, Semilinear Sets.
+      </small>
+    </li>
+
+    <li>
+      Christel Baier and Joost-Pieter Katoen, <em>Principles of Model Checking</em><br>
+      <small>
+        Temporal logics (LTL, CTL, μ-calculus) and model checking techniques.
+      </small>
+    </li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  © 2026 <span>Concurrency Theory Course</span> · Department of Computer Science
+</footer>
+
+</body>
+</html>
